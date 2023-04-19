@@ -23,10 +23,10 @@ struct StationBoard {
     entries: Vec<StationBoardEntry>,
 }
 
-fn main() -> Result<(), request::Error> {
+fn main() -> Result<(), reqwest::Error> {
     let client = Client::new();
     let station_id = "8000085"; // Düsseldorf Hbf station ID
-    let api_key = "YOUR_API_KEY_HERE";
+    let api_key = "apikey";
     let url = format!(
         "https://api.deutschebahn.com/fahrplan-plus/v1/arrivalBoard/{station_id}?date={date}",
         station_id = station_id,
